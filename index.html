@@ -68,79 +68,108 @@
 
 <script>
 
-// Set your API key first
-xively.setKey( "QjgNPVyfrL8mq0ulvTk69cfkY0RPTVE8SWEA6Jr7SnjdfOBY" );
+    // Make sure the document is ready to be handled
+    $(document).ready(function($) {
 
-var startOfYesterday = moment().subtract("day", 1).startOf('day');
-var endOfYesterday = moment().startOf('day');
+      // Set the Xively API key (https://xively.com/users/YOUR_USERNAME/keys)
+      xively.setKey( "Vda1myZDPpFLf7zrktfsbPMR33VLJkSEePUHw0ExvqDBRNse" );
 
-console.log(startOfYesterday);
-console.log(endOfYesterday);
+      // Replace with your own values
+      var feedID        = 1926706524,          // Feed ID (the last number on the URL on the feed page on Xively)
+          datastreamID  = "Temperature";       // Datastream ID
+          selector      = "#myelement";   // Your element on the page - takes any valid jQuery selector
+		  
+		   // Replace with your own values
+      var feedID2        = 1926706524,          // Feed ID (the last number on the URL on the feed page on Xively)
+          datastreamID2  = "Humidity";       // Datastream ID
+          selector2      = "#myelement2";   // Your element on the page - takes any valid jQuery selector
+		  
+	var feedID3        = 1926706524,          // Feed ID (the last number on the URL on the feed page on Xively)
+          datastreamID3  = "Pressure";       // Datastream ID
+          selector3      = "#myelement3";   // Your element on the page - takes any valid jQuery selector
+		  
+	var feedID4        = 1926706524,          // Feed ID (the last number on the URL on the feed page on Xively)
+          datastreamID4  = "Light";       // Datastream ID
+          selector4      = "#myelement4";   // Your element on the page - takes any valid jQuery selector
 
-var query = {
-  start: startOfYesterday.toJSON(),
-  end: endOfYesterday.toJSON(),
-  interval: 60,
-  limit: 1000
-};
-
-xively.datastream.history( "106267", "NO2_00-04-a3-37-cc-cb_0", query, loadData);
-
-function loadData(data) {
-  var unit = data.unit.label;
-  var series = [];
-  var filtedData = data.datapoints.filter(function(x) { return (x.value < 1000); });
-  for (var i=0; i < filtedData.length; i++ ) {
-    var date = moment(filtedData[i].at);
-    var value = parseInt(filtedData[i].value);
-    series[i] = {x: date.unix(), y: value};
-  }
-  drawGraph(series, unit);
-}
-
-function drawGraph(data, unit) {
-  var graph = new Rickshaw.Graph( {
-    element: document.querySelector("#chart"),
-    width: 640,
-    height: 400,
-    renderer: 'line',
-    series: [
-      {
-        data: data,
-        color: '#6060c0',
-        name: unit
-      }
-    ]
-  } );
-  graph.render();
-
-  var hoverDetail = new Rickshaw.Graph.HoverDetail( {
-    graph: graph
-  } );
-
-  var legend = new Rickshaw.Graph.Legend( {
-    graph: graph,
-    element: document.getElementById('legend')
-  } );
-
-  var shelving = new Rickshaw.Graph.Behavior.Series.Toggle( {
-    graph: graph,
-    legend: legend
-  } );
+      // Get datastream data from Xively
+      xively.datastream.get (feedID, datastreamID, function ( datastream ) {
+        // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
+        // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
+        // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
 
 
-  var axes = new Rickshaw.Graph.Axis.Time( {
-    graph: graph
-  });
-  axes.render();
-  
-  var yAxis = new Rickshaw.Graph.Axis.Y({
-      graph: graph
-  });
+        // Display the current value from the datastream
+        $(selector).html( datastream["current_value"] );
 
-  yAxis.render();
-}
-</script>
+        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
+        xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
+          // Display the current value from the updated datastream
+          $(selector).html( datastream_updated["current_value"] );
+        });
+
+      });
+	  
+	  xively.datastream.get (feedID2, datastreamID2, function ( datastream ) {
+        // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
+        // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
+        // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
+
+
+        // Display the current value from the datastream
+        $(selector2).html( datastream["current_value"] );
+
+        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
+        xively.datastream.subscribe( feedID2, datastreamID2, function ( event , datastream_updated ) {
+          // Display the current value from the updated datastream
+          $(selector2).html( datastream_updated["current_value"] );
+        });
+
+      });
+	  
+	  
+	  
+	  xively.datastream.get (feedID3, datastreamID3, function ( datastream ) {
+        // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
+        // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
+        // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
+
+
+        // Display the current value from the datastream
+        $(selector3).html( datastream["current_value"] );
+
+        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
+        xively.datastream.subscribe( feedID3, datastreamID3, function ( event , datastream_updated ) {
+          // Display the current value from the updated datastream
+          $(selector3).html( datastream_updated["current_value"] );
+        });
+
+      });
+	  
+	  
+	  
+	  // Get datastream data from Xively
+      xively.datastream.get (feedID4, datastreamID4, function ( datastream ) {
+        // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
+        // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
+        // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
+
+
+        // Display the current value from the datastream
+        $(selector4).html( datastream["current_value"] );
+
+        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
+        xively.datastream.subscribe( feedID4, datastreamID4, function ( event , datastream_updated ) {
+          // Display the current value from the updated datastream
+          $(selector4).html( datastream_updated["current_value"] );
+        });
+
+      });
+	  
+
+      // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
+    });
+  </script>
 
 
 </body>

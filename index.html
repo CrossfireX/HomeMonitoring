@@ -1,172 +1,76 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Home monitoring" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <link type="text/css" rel="stylesheet" href="css/graph.css">
-    <link type="text/css" rel="stylesheet" href="css/detail.css">
-    <link type="text/css" rel="stylesheet" href="css/legend.css">
-    <link type="text/css" rel="stylesheet" href="css/lines.css">
-
-    
-    	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
-    
-
-    <title>Home monitoring</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Homemonitoring by CrossfireX</title>
   </head>
 
   <body>
+    <div id="container">
+      <div class="inner">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <h1 id="project_title">Home monitoring</h1>
+        <header>
+          <h1>Homemonitoring</h1>
+          <h2></h2>
+        </header>
 
-      </header>
-    </div>
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/CrossfireX/HomeMonitoring/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/CrossfireX/HomeMonitoring/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/CrossfireX/HomeMonitoring" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner" style="height: 480px">
-      <div id="chart_container" >
-          <div id="chart"></div>
-          <div id="legend_container">
-            <div id="smoother" title="Smoothing"></div>
-            <div id="legend"></div>
-          </div>
-          <div id="slider"></div>
+        <hr>
+
+        <section id="main_content">
+          <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+        </section>
+
+        <footer>
+          Homemonitoring is maintained by <a href="https://github.com/CrossfireX">CrossfireX</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
       </div>
-<br>
-<p><b>TEMPERATURE	<span style="color:#E69421"><span id="myelement"></span></b></p>	
-<p><b>HUMIDITY	<span style="color:#E69421"><span id="myelement2"></span></b></p>
-<p><b>LIGHT	<span style="color:#E69421"><span id="myelement4"></span></b></p>
-<p><b>PRESSURE	<span style="color:#E69421"><span id="myelement3"></span></b></p>
-<p><b>POWER	<span style="color:#E69421"><span id="myelement5"></span></b></p>
-<br>
-
-      </section>
     </div>
-
-    <!-- FOOTER -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Maintained by <a href="https://github.com/CrossfireX">CrossfireX</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-<script>
-
-    // Make sure the document is ready to be handled
-    $(document).ready(function($) {
-
-      // Set the Xively API key (https://xively.com/users/YOUR_USERNAME/keys)
-      xively.setKey( "Vda1myZDPpFLf7zrktfsbPMR33VLJkSEePUHw0ExvqDBRNse" );
-
-      // Replace with your own values
-      var feedID        = 1926706524,          // Feed ID (the last number on the URL on the feed page on Xively)
-          datastreamID  = "Temperature";       // Datastream ID
-          selector      = "#myelement";   // Your element on the page - takes any valid jQuery selector
-		  
-		   // Replace with your own values
-      var feedID2        = 1926706524,          // Feed ID (the last number on the URL on the feed page on Xively)
-          datastreamID2  = "Humidity";       // Datastream ID
-          selector2      = "#myelement2";   // Your element on the page - takes any valid jQuery selector
-		  
-	var feedID3        = 1926706524,          // Feed ID (the last number on the URL on the feed page on Xively)
-          datastreamID3  = "Pressure";       // Datastream ID
-          selector3      = "#myelement3";   // Your element on the page - takes any valid jQuery selector
-		  
-	var feedID4        = 1926706524,          // Feed ID (the last number on the URL on the feed page on Xively)
-          datastreamID4  = "Light";       // Datastream ID
-          selector4      = "#myelement4";   // Your element on the page - takes any valid jQuery selector
-
-      // Get datastream data from Xively
-      xively.datastream.get (feedID, datastreamID, function ( datastream ) {
-        // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
-        // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
-        // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
-
-
-        // Display the current value from the datastream
-        $(selector).html( datastream["current_value"] );
-
-        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
-        xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
-          // Display the current value from the updated datastream
-          $(selector).html( datastream_updated["current_value"] );
-        });
-
-      });
-	  
-	  xively.datastream.get (feedID2, datastreamID2, function ( datastream ) {
-        // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
-        // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
-        // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
-
-
-        // Display the current value from the datastream
-        $(selector2).html( datastream["current_value"] );
-
-        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
-        xively.datastream.subscribe( feedID2, datastreamID2, function ( event , datastream_updated ) {
-          // Display the current value from the updated datastream
-          $(selector2).html( datastream_updated["current_value"] );
-        });
-
-      });
-	  
-	  
-	  
-	  xively.datastream.get (feedID3, datastreamID3, function ( datastream ) {
-        // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
-        // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
-        // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
-
-
-        // Display the current value from the datastream
-        $(selector3).html( datastream["current_value"] );
-
-        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
-        xively.datastream.subscribe( feedID3, datastreamID3, function ( event , datastream_updated ) {
-          // Display the current value from the updated datastream
-          $(selector3).html( datastream_updated["current_value"] );
-        });
-
-      });
-	  
-	  
-	  
-	  // Get datastream data from Xively
-      xively.datastream.get (feedID4, datastreamID4, function ( datastream ) {
-        // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
-        // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
-        // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
-
-
-        // Display the current value from the datastream
-        $(selector4).html( datastream["current_value"] );
-
-        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
-        xively.datastream.subscribe( feedID4, datastreamID4, function ( event , datastream_updated ) {
-          // Display the current value from the updated datastream
-          $(selector4).html( datastream_updated["current_value"] );
-        });
-
-      });
-	  
-
-      // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
-    });
-  </script>
-
-
-</body>
-</body>
+  </body>
+</html>

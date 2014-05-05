@@ -14,7 +14,7 @@
 		<script type="text/javascript" src="jquery.simpleopenweather.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function() {
-			$("#weather1").simpleopenweather({template: '<span>{{temperature}} </span>', units: 'metric'});
+			$("#weather1").simpleopenweather({template: '<span>{{temperature}} / {{humidity}} </span>', units: 'metric'});
 			});
 	</script>		
     <!--[if lt IE 9]>
@@ -37,9 +37,9 @@
 <body>    
 <br>
 <br>
-<p><b>TEMP OUT <span style="color:#E69421"><span id="weather1" class="simpleopenweather" data-simpleopenweather-city="Maribor"></span></b></p>
-<p><b>TEMP IN	<span style="color:#E69421"><span id="myelement"></span></b></p>	
-<p><b>HUMIDITY	<span style="color:#E69421"><span id="myelement2"></span></b></p>
+<p><b>OUTDOOR <span style="color:#E69421"><span id="weather1" class="simpleopenweather" data-simpleopenweather-city="Maribor"></span></b></p>
+<p><b>INDOOR <span style="color:#E69421"><span id="myelement"></span> / <span id="myelement2"></span></b></p>	
+<!--<p><b>HUMIDITY	<span style="color:#E69421"><span id="myelement2"></span></b></p>-->
 <p><b>LIGHT	<span style="color:#E69421"><span id="myelement4"></span></b></p>
 <p><b>PRESSURE	<span style="color:#E69421"><span id="myelement3"></span></b></p>	
 <br>
